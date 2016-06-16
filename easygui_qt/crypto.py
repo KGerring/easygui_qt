@@ -5,15 +5,6 @@
 
 import sys, os
 
-SEARCH_PATHS = [
-	'/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages',
-	'/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages',
-	'/Users/Kristen/Library/Python/3.4/lib/python/site-packages',
-	'/anaconda/lib/python3.4/site-packages', '/anaconda/lib/python3.5/site-packages']
-for pth in SEARCH_PATHS:
-	if pth not in sys.path:
-		sys.path.insert(0, pth)
-
 try:
 	from . import utils
 	from . import language_selector
@@ -46,7 +37,8 @@ except ImportError:
 	pass
 
 
-#EASYGUI = easygui_qt.__all__
+__all__ =['encode', 'decode', 'mask', 'unmask', 'encrypt', 'decrypt', 'simple_encrypt', 'simple_decrypt', 
+'encryption_function', 'secure_get_password', 'secure_get_username_password', 'secure_get_new_password']
 
 def encode(string):
 	'''
